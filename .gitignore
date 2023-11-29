@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+.browser_modules
+build
+dist
+lib
+out
+plugins
+tmp
+*.log
+*-app/*
+!*-app/package.json
+**/.theia
+**/.vscode
+**/.test
+**/tsconfig.tsbuildinfo
+*.vsix

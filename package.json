@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "engines": {
+    "yarn": ">=1.7.0 <2",
+    "node": ">=18.17.0 <21"
+  },
+  "scripts": {
+    "prepare": "lerna run prepare && yarn run download:plugins",
+    "postinstall": "theia check:theia-version",
+    "rebuild:browser": "theia rebuild:browser",
+    "rebuild:electron": "theia rebuild:electron",
+    "start:browser": "yarn rebuild:browser && yarn --cwd browser-app start",
+    "start:electron": "yarn rebuild:electron && yarn --cwd electron-app start",
+    "watch": "lerna run --parallel watch",
+    "download:plugins": "theia download:plugins"
+  },
+  "theiaPluginsDir": "plugins",
+  "theiaPlugins": {
+
+  },
+  "devDependencies": {
+    "lerna": "7.4.2"
+  },
+  "workspaces": [
+    "extensions/*", "browser-app", "electron-app"
+  ]
+}
